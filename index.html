@@ -8,6 +8,38 @@
         var options = { $AutoPlay: 1 };
         var jssor1_slider = new $JssorSlider$("jssor_1", options);
     });
+    var time = setInterval(function() {		
+				var rain = document.createElement("div");	
+				var colorList = ["darkred", "darkorange", "darkyellow", "darkgreen", "darkblue", "white", "darkpurple"];		
+				var color = parseInt(Math.random() * 7);		
+				rain.style.backgroundColor = colorList[color];		
+				rain.style.position = "absolute";		
+				rain.style.width = '1px';
+				rain.style.height = '20px';
+				rain.style.top = "0px";		
+				rain.style.opacity = 1.0;	
+				rain.style.left = Math.random() * 1900 + "px";		
+				document.body.appendChild(rain);		
+				var timer = setInterval(function() {		
+					var height = parseInt(rain.style.top);		
+					var k = 1;
+					k++;
+					rain.style.top = height + 5 * Math.pow(k, 2) + "px";	
+					if (rain.style.top >= "900px") {	
+						rain.style.width = '5px';	
+						rain.style.height = '5px';
+						rain.style.borderRadius = "50%";	
+						var time2 = setInterval(function() {	
+							rain.style.opacity = rain.style.opacity - 0.1;
+						}, 50);
+						rain.style.width = parseInt(rain.style.width) + 20 + "px";	
+						rain.style.left = parseInt(rain.style.left)-12.5+"px";
+					}
+					if (rain.style.top >= "900px") {
+						clearInterval(timer);
+					}
+				}, 50);
+			}, 50);
 </script>
 <div id="jssor_1">
     <div data-u="slides" style="position:absolute;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
