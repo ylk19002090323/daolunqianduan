@@ -42,14 +42,14 @@
       {name:"软件技术导论",credit:2}
   ];
   
-  function data1(){
-      var vlure=0;
-           for(var a=0;a<data.length;a++){
-               vlure +=data[a].credit;
-           }
-           return vlure;
-       }
-  console.log(data1());
+  console.log(
+reduce(
+    data,
+    function(a,b) {
+    return a+b.credit;
+    }
+    ,0)
+);
 
 </script>
 
