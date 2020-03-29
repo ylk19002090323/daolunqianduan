@@ -7,19 +7,16 @@
 
 var value=11;
 var initvalue=22;
-var a=0;
+
 function addition(){
     var value=initvalue;
 
     return function add(x){
         value=value+x;
-        a++;
-        if(a==2){
+        if(value==99){
             console.log(value);
         }
-        // if(value==99){
-        //     console.log(value);
-        // }
+
     };
 
 }
