@@ -21,25 +21,17 @@ $(function(){
     });
 
     $("#btn").click(function(){
-        $.post("http://localhost:8585/creditByName",{name:$("#coursename").val()}, function(data){
-             $("#divcredit").text(data);
-        });
-    })
-    
-  
-
-          
+        $.ajax({
+        type: "POST",
+        url:"http://localhost:8585/creditByName",
+        data:{name:$("#coursename").val()},
+        success: function(data){
+            $("#divcredit").text(data);
+   }
 });
-
-    
-
+});
 })
-
-
-
-
+})
     </script>
-
-
     </body>
 </html>
