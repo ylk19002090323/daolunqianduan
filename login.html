@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <body>
     <input id="username" value="2012020045"/>
     <input id="password" value="lxf"/>
@@ -13,9 +13,10 @@ $(function(){
     $("#login").click(function(){
         $.ajax({
             method:"POST"
-            ,url:"http://localhost:8585/login", 
-            contentType:"application/JSON",
-            data:JSON.stringify({username:$("#username").val(),password:$("#password").val()})
+            ,url:"http://localhost:8585/login"
+            , data:"username="+$("#username").val()+"&password="+$("#password").val()
+            // contentType:"application/JSON",
+            // data:JSON.stringify({username:$("#username").val(),password:$("#password").val()})
             ,crossDomain: true
             ,xhrFields: {
                 withCredentials: true
@@ -26,10 +27,11 @@ $(function(){
                 }
             }});
     })
+    
 })
 </script>
 
-<body>
-<html>
-<html>
+</body>
+</html>
+
     
