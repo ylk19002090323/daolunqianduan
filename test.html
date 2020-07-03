@@ -24,7 +24,7 @@ $(function(){
         ,success:function(data){
    // $.post("http://localhost:8585/data.json", function(data){
             _.each(data, function(item){
-             $("ul").append("<li>"+item.name+"(学分："+item.credit+")"+"</li>");
+             $("ul").append("<li>"+item.NAME+"(学分："+item.CREDIT+")"+"</li>");
             });
         }
     });
